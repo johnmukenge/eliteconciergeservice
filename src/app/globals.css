@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom utilities */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.gradient-gold {
+  @apply bg-gradient-to-r from-gold-400 to-gold-600;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-gold-500 to-gold-700 bg-clip-text text-transparent;
+}
+
+.btn-primary {
+  @apply px-8 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-8 py-3 border-2 border-gold-500 text-gold-600 rounded-lg font-semibold hover:bg-gold-50 transition-all duration-300;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold text-navy-900 mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-600 mb-12 max-w-2xl;
+}
+
+.card-shadow {
+  @apply shadow-lg hover:shadow-2xl transition-shadow duration-300;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ca8a04;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a16207;
+}
