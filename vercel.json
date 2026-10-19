@@ -8,11 +8,27 @@
   ],
   "routes": [
     {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/"
     }
   ],
   "env": {
-    "NEXT_PUBLIC_APP_NAME": "Elite Concierge Service"
-  }
+    "NEXT_PUBLIC_APP_NAME": "Elite Concierge Service",
+    "NEXT_PUBLIC_VERCEL": "true"
+  },
+  "headers": [
+    {
+      "source": "/public/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
