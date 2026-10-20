@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
+  productionBrowserSourceMaps: false,
   
   images: {
-    unoptimized: process.env.NEXT_PUBLIC_VERCEL === 'true',
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,14 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  
-  webpack: (config, { isServer }) => {
-    return config;
-  },
-  
-  compress: true,
-  poweredByHeader: false,
-  productionBrowserSourceMaps: false,
 };
 
 module.exports = nextConfig;
