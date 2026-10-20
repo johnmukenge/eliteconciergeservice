@@ -1,34 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
   "env": {
-    "NEXT_PUBLIC_APP_NAME": "Elite Concierge Service",
-    "NEXT_PUBLIC_VERCEL": "true"
-  },
-  "headers": [
-    {
-      "source": "/public/:path*",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
+    "NEXT_PUBLIC_APP_NAME": "Elite Concierge Service"
+  }
 }
